@@ -19,7 +19,7 @@ def gmp_alert(event, context):
   # Set up query to check spent against target for each client
   query = """
       SELECT partner
-      FROM `ms-gcp-dma-internal.GMP.partner_warning`
+      FROM `project.dataset.table`
       WHERE spend > budget_insured
   """
 
@@ -31,11 +31,11 @@ def gmp_alert(event, context):
   # If there are results, send email
   if len(results) > 0:
       # Set up message parameters
-      sender_email = "merklenederlans@gmail.com"
-      emails = ['amar@Gmail.com', 'max@Gmail.com']
+      sender_email = "name@gmail.com"
+      emails = ['amar@Gmail.com', 'joo@Gmail.com']
       password = "xxxxxxxxxxxxxx"
       message = MIMEMultipart("alternative")
-      message["Subject"] = "GMP Partner Warning"
+      message["Subject"] = "Failer Warning"
       message["From"] = sender_email
       message["To"] =  ', '.join(emails)
 
